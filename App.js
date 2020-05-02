@@ -11,7 +11,7 @@ import TaskDetails from './components/TaskDetails';
 class HomeScreen extends React.Component {
   constructor(props){
     super(props);
-    this.state={itemList:[],dummy:true}
+    this.state={itemList:[]}
   }
 
   fetchAllItems = async () => {
@@ -19,10 +19,10 @@ class HomeScreen extends React.Component {
         const keys = await AsyncStorage.getAllKeys()
         const items = await AsyncStorage.multiGet(keys)
         this.setState({itemList:items})
-        console.log("ITEM LIST IS ")
-        console.log(this.state.itemList)
+        //console.log("ITEM LIST IS ")
+        //console.log(this.state.itemList)
     } catch (error) {
-        console.log(error, "problem")
+        //console.log(error, "problem")
     }
   }
 
